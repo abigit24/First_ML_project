@@ -3,4 +3,4 @@ gunicorn
 numpy
 sklearn
 pandas
--e . # This will install all lib used in other packages too
+-e .
