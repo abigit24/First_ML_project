@@ -32,3 +32,5 @@ Applicztion name- myfirstmlproject
 python setup.py install
 
 pip install -r requirements.txt
+
+-e . means # This will install all lib used in other packages too
