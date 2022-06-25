@@ -1,0 +1,5 @@
+[2022-06-18 13:30:34,455] werkzeug - INFO -  * Running on http://127.0.0.1:5000 (Press CTRL+C to quit)
+[2022-06-18 13:34:50,822] root - INFO - Error occured in scrip: [g:/Abhi_WorkFiles/DataScience/ML_Project/First_ML_project/app.py] at line number: [13] error message: [We are testing custom exception]
+[2022-06-18 13:34:50,822] root - INFO - We are testing logging module
+[2022-06-18 13:34:50,823] werkzeug - INFO - 127.0.0.1 - - [18/Jun/2022 13:34:50] "GET / HTTP/1.1" 200 -
+[2022-06-18 13:34:50,970] werkzeug - INFO - 127.0.0.1 - - [18/Jun/2022 13:34:50] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
