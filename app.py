@@ -1,11 +1,11 @@
-from distutils.log import debug
 from flask import Flask
+import sys
 from housing.logger import logging
 from housing.exception import HousingException
-import sys
-app = Flask(__name__)
+app=Flask(__name__)
 
-@app.route("/", methods=['GET', 'POST'])
+
+@app.route("/",methods=['GET','POST'])
 def index():
     try:
         raise Exception("We are testing custom exception")
@@ -15,6 +15,6 @@ def index():
         logging.info("We are testing logging module")
     return "CI CD pipeline has been established."
 
-if __name__ == "__main__":
-    
-    app.run(debug=False)
+
+if __name__=="__main__":
+    app.run()
