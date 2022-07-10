@@ -1,32 +1,38 @@
-from importlib_metadata import requires
-from setuptools import find_packages, setup
+from setuptools import setup,find_packages
 from typing import List
 
-# Declaring variables for setup functions
-PROJECT_NAME = "housing-predictor"
-VERSION = "0.0.1"
-AUTHOR = "Abhirami Kumaraguruparan"
-PACKAGES= ["housing"]
-REQUIREMENT_FILENAME = "requirements.txt"
+#Declaring variables for setup functions
+PROJECT_NAME="housing-predictor"
+VERSION="0.0.3"
+AUTHOR="Avnish Yadav"
+DESRCIPTION="This is a first FSDS Nov batch Machine Learning Project"
 
-def get_requirements_list()->List[str]: # -> List[str] notation means resturn list of str
-    """
-    Description : This function s going to return list of requirements
-    metioned in requirements.txt
+REQUIREMENT_FILE_NAME="requirements.txt"
 
-    return : This function is going to 
-    return a list contain names of libraries in requirements.txt file
+HYPHEN_E_DOT = "-e ."
+
+
+def get_requirements_list() -> List[str]:
     """
-    
-    
-    with open(REQUIREMENT_FILENAME) as req_file:
-        return req_file.readlines().remove("-e .")
+    Description: This function is going to return list of requirement
+    mention in requirements.txt file
+    return This function is going to return a list which contain name
+    of libraries mentioned in requirements.txt file
+    """
+    with open(REQUIREMENT_FILE_NAME) as requirement_file:
+        requirement_list = requirement_file.readlines()
+        requirement_list = [requirement_name.replace("\n", "") for requirement_name in requirement_list]
+        if HYPHEN_E_DOT in requirement_list:
+            requirement_list.remove(HYPHEN_E_DOT)
+        return requirement_list
+
+
 
 setup(
-    name = PROJECT_NAME,
-    version= VERSION,
-    author=AUTHOR,
-    description= "This is my first ML project",
-    packages=find_packages(), # This gets all the packages from the project
-    install_requires = get_requirements_list()
+name=PROJECT_NAME,
+version=VERSION,
+author=AUTHOR,
+description=DESRCIPTION,
+packages=find_packages(), 
+install_requires=get_requirements_list()
 )
